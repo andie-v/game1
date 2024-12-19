@@ -1187,7 +1187,7 @@
       "width": 10,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/Route114_FossilManiacsHouse/border.bin",
       "blockdata_filepath": "data/layouts/Route114_FossilManiacsHouse/map.bin"
     },
