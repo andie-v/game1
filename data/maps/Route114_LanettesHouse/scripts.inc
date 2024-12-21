@@ -3,7 +3,12 @@ Route114_LanettesHouse_MapScripts::
 	.byte 0
 
 Route114_LanettesHouse_OnTransition:
+	goto_if_set FLAG_LANDMARK_LANETTES_HOUSE, Route114_LanettesHouse_EventScript_End
+	setvar VAR_HARD_LEVEL_CAP, 0
 	setflag FLAG_LANDMARK_LANETTES_HOUSE
+	end
+
+Route114_LanettesHouse_EventScript_End::
 	end
 
 Route114_LanettesHouse_EventScript_Lanette::
@@ -44,6 +49,14 @@ Route114_LanettesHouse_EventScript_NotebookPage3::
 Route114_LanettesHouse_EventScript_PC::
 	msgbox Route114_LanettesHouse_Text_EmailFromBill, MSGBOX_SIGN
 	end
+
+Route114_LanettesHouse_EventScript_ExitedRoom0::
+	msgbox Route114_LanettesHouse_Text_HeyPlayer, MSGBOX_DEFAULT
+	setvar VAR_HARD_LEVEL_CAP, 10
+	end
+
+Route114_LanettesHouse_Text_HeyPlayer:
+	.string "Hey! {PLAYER}!$"
 
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis:
 	.string "LANETTE: Oh! {PLAYER}{KUN}!\p"
