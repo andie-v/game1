@@ -52,28 +52,31 @@ Route114_LanettesHouse_EventScript_PC::
 
 Route114_LanettesHouse_EventScript_ExitedRoom0::
 	lockall
-	setvar VAR_HARD_LEVEL_CAP, 10
 	msgbox Route114_LanettesHouse_Text_HeyPlayer, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Route114_LanettesHouse_Movement_Start0
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setvar VAR_HARD_LEVEL_CAP, 10
 	releaseall
 	end
 
 Route114_LanettesHouse_EventScript_ExitedRoom1::
 	lockall
-	setvar VAR_HARD_LEVEL_CAP, 10
 	msgbox Route114_LanettesHouse_Text_HeyPlayer, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Route114_LanettesHouse_Movement_Start1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setvar VAR_HARD_LEVEL_CAP, 10
 	releaseall
 	end
 
 Route114_LanettesHouse_EventScript_ExitedRoom2::
 	lockall
-	setvar VAR_HARD_LEVEL_CAP, 10
 	msgbox Route114_LanettesHouse_Text_HeyPlayer, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Route114_LanettesHouse_Movement_Start2
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setvar VAR_HARD_LEVEL_CAP, 10
 	releaseall
 	end
 
