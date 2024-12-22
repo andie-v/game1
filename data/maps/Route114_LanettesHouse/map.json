@@ -67,6 +67,24 @@
       "var": "VAR_HARD_LEVEL_CAP",
       "var_value": "0",
       "script": "Route114_LanettesHouse_EventScript_ExitedRoom0"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_HARD_LEVEL_CAP",
+      "var_value": "0",
+      "script": "Route114_LanettesHouse_EventScript_ExitedRoom1"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_HARD_LEVEL_CAP",
+      "var_value": "0",
+      "script": "Route114_LanettesHouse_EventScript_ExitedRoom2"
     }
   ],
   "bg_events": [
