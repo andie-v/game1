@@ -99,6 +99,7 @@ Route114_LanettesHouse_EventScript_GetStarter::
 	return
 
 Route114_LanettesHouse_EventScript_GoStartAdventure::
+	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_INFINITE_REPEL
 	giveitem ITEM_POKE_BALL, 25
 	msgbox Route114_LanettesHouse_Text_GoAdventure, MSGBOX_DEFAULT
