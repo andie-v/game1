@@ -57,6 +57,7 @@ Route114_LanettesHouse_EventScript_ExitedRoom0::
 	applymovement OBJ_EVENT_ID_PLAYER, Route114_LanettesHouse_Movement_Start0
 	waitmovement OBJ_EVENT_ID_PLAYER
 	setvar VAR_HARD_LEVEL_CAP, 10
+	call_if_set FLAG_LANDMARK_LANETTES_HOUSE, Route114_LanettesHouse_EventScript_GetStarter
 	releaseall
 	end
 
@@ -67,6 +68,7 @@ Route114_LanettesHouse_EventScript_ExitedRoom1::
 	applymovement OBJ_EVENT_ID_PLAYER, Route114_LanettesHouse_Movement_Start1
 	waitmovement OBJ_EVENT_ID_PLAYER
 	setvar VAR_HARD_LEVEL_CAP, 10
+	call_if_set FLAG_LANDMARK_LANETTES_HOUSE, Route114_LanettesHouse_EventScript_GetStarter
 	releaseall
 	end
 
@@ -77,32 +79,76 @@ Route114_LanettesHouse_EventScript_ExitedRoom2::
 	applymovement OBJ_EVENT_ID_PLAYER, Route114_LanettesHouse_Movement_Start2
 	waitmovement OBJ_EVENT_ID_PLAYER
 	setvar VAR_HARD_LEVEL_CAP, 10
+	call_if_set FLAG_LANDMARK_LANETTES_HOUSE, Route114_LanettesHouse_EventScript_GetStarter
 	releaseall
 	end
 
+Route114_LanettesHouse_EventScript_GetStarter::
+	msgbox Route114_LanettesHouse_Text_GivingStarter, MSGBOX_DEFAULT
+	special ChooseStarter
+	waitstate
+	setflag FLAG_SYS_POKEMON_GET
+	bufferleadmonspeciesname STR_VAR_1
+	msgbox Route114_LanettesHouse_Text_ReceivedMon, MSGBOX_DEFAULT
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	msgbox Route114_LanettesHouse_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, Route114_LanettesHouse_EventScript_NicknameStarter
+	call_if_eq VAR_RESULT, NO, Route114_LanettesHouse_EventScript_GoStartAdventure
+	return
+
+Route114_LanettesHouse_EventScript_GoStartAdventure::
+	msgbox Route114_LanettesHouse_Text_GoAdventure, MSGBOX_DEFAULT
+	closemessage
+	return
+
+Route114_LanettesHouse_EventScript_NicknameStarter::
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	call Route114_LanettesHouse_EventScript_GoStartAdventure
+	end
+
+Route114_LanettesHouse_Text_GoAdventure:
+	.string "Well, I don't want to hold you, I'm\n"
+	.string "sure you're eager to get going…$"
+
+Route114_LanettesHouse_Text_ReceivedMon:
+	.string "{PLAYER} received the {STR_VAR_1}!$"
+
+Route114_LanettesHouse_Text_WhyNotGiveNicknameToMon:
+	.string "PROF. BIRCH: While you're at it, why not\n"
+	.string "give a nickname to that {STR_VAR_1}?$"
+
 Route114_LanettesHouse_Text_HeyPlayer:
-	.string "Hey! {PLAYER}!$"
+	.string "Hey! {PLAYER}!\p"
+	.string "Come here!$"
+
+Route114_LanettesHouse_Text_GivingStarter:
+	.string "DAD: Look who finally woke up!\p"
+	.string "Are you excited for your big day?\n"
+	.string "You're finally old enough for your\l"
+	.string "very first adventures…\p"
+	.string "Oh, right! I was going to give you\n"
+	.string "your starter POKéMON!$"
 
 Route114_LanettesHouse_Movement_Start0:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
+	walk_right
+	walk_down
+	walk_right
+	walk_right
 	step_end
 
 Route114_LanettesHouse_Movement_Start1:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
+	walk_down
+	walk_right
+	walk_right
 	step_end
 
 Route114_LanettesHouse_Movement_Start2:
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
+	walk_down
+	walk_down
+	walk_right
 	step_end
 
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis:
