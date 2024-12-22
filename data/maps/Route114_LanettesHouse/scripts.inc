@@ -99,6 +99,8 @@ Route114_LanettesHouse_EventScript_GetStarter::
 	return
 
 Route114_LanettesHouse_EventScript_GoStartAdventure::
+	giveitem ITEM_INFINITE_REPEL
+	giveitem ITEM_POKE_BALL, 25
 	msgbox Route114_LanettesHouse_Text_GoAdventure, MSGBOX_DEFAULT
 	closemessage
 	return
@@ -117,8 +119,8 @@ Route114_LanettesHouse_Text_ReceivedMon:
 	.string "{PLAYER} received the {STR_VAR_1}!$"
 
 Route114_LanettesHouse_Text_WhyNotGiveNicknameToMon:
-	.string "PROF. BIRCH: While you're at it, why not\n"
-	.string "give a nickname to that {STR_VAR_1}?$"
+	.string "DAD: While you're at it, why not give\n"
+	.string "a nickname to that {STR_VAR_1}?$"
 
 Route114_LanettesHouse_Text_HeyPlayer:
 	.string "Hey! {PLAYER}!\p"
@@ -128,7 +130,7 @@ Route114_LanettesHouse_Text_GivingStarter:
 	.string "DAD: Look who finally woke up!\p"
 	.string "Are you excited for your big day?\n"
 	.string "You're finally old enough for your\l"
-	.string "very first adventures…\p"
+	.string "very own adventure…\p"
 	.string "Oh, right! I was going to give you\n"
 	.string "your starter POKéMON!$"
 
