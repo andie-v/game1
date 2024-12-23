@@ -3,6 +3,7 @@ Route114_LanettesHouse_MapScripts::
 	.byte 0
 
 Route114_LanettesHouse_OnTransition:
+	setrespawn HEAL_LOCATION_ROUTE_114
 	goto_if_set FLAG_LANDMARK_LANETTES_HOUSE, Route114_LanettesHouse_EventScript_End
 	setvar VAR_HARD_LEVEL_CAP, 0
 	setflag FLAG_LANDMARK_LANETTES_HOUSE
