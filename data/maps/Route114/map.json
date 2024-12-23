@@ -18,10 +18,24 @@
   ],
   "warp_events": [
     {
-      "x": 8,
-      "y": 5,
+      "x": 7,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_ROUTE114_LANETTES_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE114_LANETTES_HOUSE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_GRANITE_CAVE_1F",
       "dest_warp_id": "0"
     }
   ],
