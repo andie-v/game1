@@ -89,6 +89,12 @@ Route114_LanettesHouse_EventScript_GetStarter::
 	special ChooseStarter
 	waitstate
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_SYS_B_DASH
+	setflag FLAG_ADVENTURE_STARTED
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
 	bufferleadmonspeciesname STR_VAR_1
 	msgbox Route114_LanettesHouse_Text_ReceivedMon, MSGBOX_DEFAULT
 	waitmessage
@@ -106,6 +112,13 @@ Route114_LanettesHouse_EventScript_GoStartAdventure::
 	msgbox Route114_LanettesHouse_Text_GoAdventure, MSGBOX_DEFAULT
 	closemessage
 	return
+
+Route114_LanettesHouse_EventScript_Healing::
+	playfanfare MUS_HEAL
+	waitfanfare
+	special HealPlayerParty
+	callnative UpdateFollowingPokemon
+	end
 
 Route114_LanettesHouse_EventScript_NicknameStarter::
 	setvar VAR_0x8004, 0
